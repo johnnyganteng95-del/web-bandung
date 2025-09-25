@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunda Explore - Wonderful Trip</title>
+  <meta name="description" content="Sunda Explore - Paket Tour Bandung, Lembang, Ciwidey, Pangalengan dengan harga terbaik dan guide profesional.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/3d8a04f85c.js" crossorigin="anonymous"></script>
+  <style>
+    /* Reset & Font */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #2D3748;
+      padding-top: 70px; /* biar konten tidak ketiban navbar */
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    html {
+      scroll-behavior: smooth; /* smooth scroll */
+    }
+
+    /* Header (Navbar) */
+    header {
+      background: #2B6CB0;
+      color: #fff;
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    .nav-links li {
+      margin-left: 20px;
+    }
+    .nav-links a.active {
+      background-color: #FFD700;
+    color: #2B6CB0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #FFD700;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('asia afrika.jpg') no-repeat center center/cover;
+      color: #fff;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .btn {
+      background: #FFD700;
+      color: #2B6CB0;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #FFC107;
+    }
+
+    /* Tours Section */
+    .tours {
+    padding: 80px 0;
+    background: #F7FAFC;
+    }
+    .tours h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .tour-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-body h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #2B6CB0;
+    }
+    .card-body ul {
+      list-style: none;
+      margin-bottom: 15px;
+    }
+    .card-body ul li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+    .card-body ul li i {
+      color: #3182CE;
+      margin-right: 8px;
+    }
+    .price {
+      font-weight: 700;
+      color: #E53E3E;
+      margin-bottom: 15px;
+    }
+
+    /* About */
+    .about {
+        padding: 80px 0;
+  text-align: center;
+  background-image: url('sunda explore 2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+    }
+    .about h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    /* Booking Form */
+    .booking-section {
+      background-color: #f0f0f0;
+      padding: 80px 0;
+    }
+    .booking-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #0b97e2d4;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .booking-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2D3748;
+    }
+    .booking-form label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #cdde16;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    .booking-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3182CE;
+      color: #0de3bf;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .booking-form button:hover {
+      background-color: #2C5282;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 80px 0;
+  text-align: center;
+  background-image: url('itb.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+    }
+    .contact h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .contact p {
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #2B6CB0;
+      color: #c3f315;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      .nav-links {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Sunda Explore</div>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#tours" class="active">Tours</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>Jadikan Trip Menyenangakan Bersama Sunda Explore</h1>
+      <p>Temukan keindahan alam dan budaya Sunda bersama kami</p>
+      <a href="#tours" class="btn">Lihat Paket Tour</a>
+    </div>
+  </section>
+
+  <!-- Tours -->
+  <section class="tours" id="tours">
+    <div class="container">
+      <h2>Paket Tour Populer
+        <p>Pilih paket tour supaya liburan kamu di Bandung makin seru</p>
+      </h2>
+      <div class="tour-cards">
+  <!-- 1 -->
+  <div class="card">
+    <img src="wisata lembang.jpg" alt="Lembang">
+    <div class="card-body">
+      <h3>One Day Tour Lembang</h3>
+      <ul>
+        <li><i class="fas fa-check"></i> 1 hari penuh (8-10 jam)</li>
+        <li><i class="fas fa-check"></i> Transport + Driver</li>
+        <li><i class="fas fa-check"></i> Guide Lokal</li>
+      </ul>
+      <div class="price">Rp 350.000 / orang</div>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <img src="kawah putih.jpg" alt="Ciwidey">
+    <div class="card-body">
+      <h3>One Day Tour Ciwidey</h3>
+      <ul>
+        <li><i class="fas fa-check"></i> 1 hari penuh (8-10 jam)</li>
+        <li><i class="fas fa-check"></i> Transport + Driver</li>
+        <li><i class="fas fa-check"></i> Tiket Kawah Putih</li>
+      </ul>
+      <div class="price">Rp 375.000 / orang</div>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <img src="dusun bambu.jpg" alt="Dusun Bambu">
+    <div class="card-body">
+      <h3>Family Tour Lembang</h3>
+      <ul>
+        <li><i class="fas fa-check"></i> Cocok untuk keluarga</li>
+        <li><i class="fas fa-check"></i> Transport + Makan Siang</li>
+        <li><i class="fas fa-check"></i> Tiket Masuk Wisata</li>
+      </ul>
+      <div class="price">Rp 400.000 / orang</div>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <img src="braga.jpg" alt="City Tour">
+    <div class="card-body">
+      <h3>Bandung City Tour</h3>
+      <ul>
+        <li><i class="fas fa-check"></i> Keliling kota 6 jam</li>
+        <li><i class="fas fa-check"></i> Guide Berpengalaman</li>
+        <li><i class="fas fa-check"></i> Transport AC</li>
+      </ul>
+      <div class="price">Rp 300.000 / orang</div>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <img src="wisata lengkap.jpg" alt="Komplit">
+    <div class="card-body">
+      <h3>Tour Wisata Lengkap</h3>
+      <ul>
+        <li><i class="fas fa-check"></i> Trans Studio Bandung</li>
+        <li><i class="fas fa-check"></i> Ranca Upas</li>
+        <li><i class="fas fa-check"></i> Lunch Box</li>
+        <li><i class="fas fa-check"></i> Transport</li>
+      </ul>
+      <div class="price">Rp 475.000 / orang</div>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <img src="wisata kuliner.jpg" alt="Kuliner">
+    <div class="card-body">
+      <h3>Wisata Kuliner Bandung</h3>
+      <ul>
+        <li><i class="fas fa-check"></i> 5 spot kuliner hits</li>
+        <li><i class="fas fa-check"></i> Makan + Transport</li>
+        <li><i class="fas fa-check"></i> Guide Lokal</li>
+      </ul>
+      <div class="price">Rp 325.000 / orang</div>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>Tentang Sunda Explore</h2>
+      <p>Kami adalah agen perjalanan terpercaya di Bandung yang menyediakan paket wisata ke destinasi terbaik seperti Lembang, Ciwidey, Braga, dan seluruh destinasi kota Bandung. Dengan pemandu profesional dan layanan ramah, kami siap menemani liburanmu menjadi pengalaman tak terlupakan.</p>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="booking-form">
+        <h2>Booking Tour</h2>
+        <form id="tourBookingForm">
+          <label for="name">Nama Lengkap</label>
+          <input type="text" id="name" name="name" placeholder="Masukkan nama kamu" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+
+          <label for="phone">No. Telepon</label>
+          <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxx" required>
+
+          <label for="tour">Pilih Paket Tour</label>
+          <select id="tour" name="tour" required>
+            <option value="">-- Pilih Tour --</option>
+            <option value="lembang">One Day Tour Lembang</option>
+            <option value="ciwidey">One Day Tour Ciwidey</option>
+            <option value="dusun-bambu">One Day Tour Dusun Bambu</option>
+            <option value="lembang-2h1m">Lembang Tour 2H1M</option>
+            <option value="pangalengan-2h1m">Pangalengan Tour 2H1M</option>
+            <option value="ciwidey-lembang-2h1m">Ciwidey - Lembang Tour 2H1M</option>
+          </select>
+
+          <label for="message">Pesan Tambahan</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tulis pesanmu..."></textarea>
+
+          <button type="submit">Kirim Booking</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <p><i class="fas fa-map-marker-alt"></i> Bandung, Jawa Barat</p>
+      <p><i class="fas fa-phone"></i> +62 857-2769-5242</p>
+      <p><i class="fas fa-envelope"></i> info@sundaexplore.com</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sunda Explore. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript Alert -->
+  <script>
+    document.getElementById("tourBookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const tour = document.getElementById("tour").value;
+      if(name && tour) {
+        alert("Terima kasih " + name + "! Booking kamu untuk paket " + tour + " sudah kami terima.");
+        this.reset();
+      } else {
+        alert("Mohon lengkapi semua data sebelum mengirim booking.");
+      }
+    });
+  </script>
+</body>
+</html>
